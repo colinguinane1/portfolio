@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Honk&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.navbar{
+    font-family: Bebas Neue;
+    font-size: 2rem; 
+    width: 100%
+}
+.navbar ul{
+    top: 0%;
+    left: 0%;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    transition: 0.5s ease;
+}
+.scrolled{
+    top: 0%;
+    left: 0%;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    list-style: none;
+    display: flex;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+    gap: 20px; 
+}
+.scrolled a{
+    color: #Fff;
+}
+.navbar a{
+    text-decoration: none;
+    color: black;
+    transition: 0.3s ease;;
+}
+.container{
+    position: absolute;
+    font-size: 2rem;;
+    margin: 0;
+    padding: 0;
+    top: 30%;
+    left: 05%;
+    font-family: Quicksand;
+    max-width: 60%;
+}
+.container button{
+    border: 1px solid black;
+    background-color: #fff;
+    font-family: Bebas neue;
+    padding: 10px;
+    font-size: 2rem;
+    box-shadow: 5px 5px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.container button:hover{
+    box-shadow: 15px 15px;;
+    font-size: 2.2rem;
+}
+.navbar a:hover{
+    font-size: 2.2rem;;
+}
+.sec1{
+    background-color: black;
+    position: absolute;;
+    top: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0%;
+    font-family:Quicksand;
+    color: #fff;;
+}
+.SectionContainer{
+    margin-left: 10px;
+    font-size: 4rem;
+    left: 20%;
+}
