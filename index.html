@@ -8,7 +8,8 @@
 </head>
 <body>
         <div class="navbar">
-        <ul id="navbar">
+        <ul id="navbar" class="ULnavbar">
+            <li><a href="index.html"><img class="logo"src="/data/cg-high-resolution-logo-black-transparent-2.png"></a></li>
             <li><a class="navbar_text"href="index.html">Home</a></li>
             <li><a class="navbar_text"href="#">Work</a></li>
             <li><a class="navbar_text"href="#">About</a></li>
@@ -17,15 +18,21 @@
     </div>
     <div class="container">
         <div class="line"></div>
-        <h1>Colin Guinane</h1>
-        <h4>Front & Back-end Programmer</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit neque totam voluptatem ad unde, magnam ducimus, obcaecati voluptates veniam laudantium sequi modi necessitatibus sit. Nesciunt aspernatur nemo inventore eaque vel.</p>
-        <button><a class="gitBTN"href="https://github.com/colinguinane1">SOURCE CODE </a><img class="gitIMG"src="25231.png"></button>
-        <button class="learnBTN">Learn More</button>
+        <h1>Hi, I'm Colin Guinane 👋</h1>
+        <p>I'm a <span id="fsANIM"class="ul">full-stack</span> web developer based in Edmonton, Alberta CA</p>
+        <button onclick="window.location.href='https://github.com/colinguinane1/portfolio'"><a class="gitBTN"href="https://github.com/colinguinane1/portfolio">SOURCE CODE </a><img class="gitIMG"src="/data/github.png"></button>
+        <button onclick="showAbout()"id="learnBTN"class="learnBTN">about</button>
+    </div>
+    <div class="aboutContainer">
+  
     </div>
     <section class="sec1">
-        <div class="SectionContainer">
-            <h1>hello</h1>
+        <div id="SectionContainer"class="SectionContainer">
+            <h1 class="secH1">ABOUT ME</h1>
+        <p id="about"class="about">Hello, I'm Colin, a passionate full-stack web developer dedicated to crafting seamless and innovative digital experiences. With a strong foundation in both front-end and back-end development, I thrive on turning ideas into functional, user-friendly websites and applications.<br><br>
+        Collaboration is at the heart of my approach, as I believe in working closely with clients and fellow developers to ensure a cohesive and efficient development process. I am driven by a desire to create not just functional websites, but digital experiences that leave a lasting impression.<br><br>
+        Outside of coding, you'll find me exploring new technologies, attending industry conferences, and contributing to the vibrant developer community. My goal is to continue pushing boundaries and creating web solutions that make a positive impact. Let's build something amazing together!</p>
+        <button class="sec1BTN">Work with me</button>
         </div>
         
 
