@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import FadeInSection from "@/components/FadeInView";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -25,10 +24,6 @@ import {
   Github,
   Linkedin,
   Mail,
-  Menu,
-  X,
-  Moon,
-  Sun,
   ExternalLink,
   GraduationCap,
   Briefcase,
@@ -36,26 +31,6 @@ import {
 } from "lucide-react";
 
 export default function EnhancedPortfolioComponent() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    if (isDarkMode) {
-      document.documentElement.classList.remove("dark");
-    } else {
-      document.documentElement.classList.add("dark");
-    }
-  };
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
   const skills = [
     "JavaScript",
     "TypeScript",
