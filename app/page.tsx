@@ -174,125 +174,6 @@ export default function EnhancedPortfolioComponent() {
     <div
       className={`min-h-screen bg-white dark:bg-black text-black dark:text-white`}
     >
-      <motion.header
-        className="sticky top-0 bg-white dark:bg-black shadow-md z-10"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 100 }}
-      >
-        <nav className="container mx-auto px-6 py-3">
-          <div className="flex justify-between items-center">
-            <motion.div
-              className="text-xl font-bold"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Colin Guinane
-            </motion.div>
-            <div className="hidden md:flex space-x-4">
-              {[
-                "About",
-                "Skills",
-                "Projects",
-                "Education",
-                "Experience",
-                "Testimonials",
-                "Contact",
-              ].map((item) => (
-                <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="hover:text-gray-600 dark:hover:text-gray-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  {item}
-                </motion.a>
-              ))}
-              <motion.button
-                onClick={toggleDarkMode}
-                className="p-2 rounded-full bg-gray-200 dark:bg-gray-700"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                {isDarkMode ? (
-                  <Sun className="w-5 h-5" />
-                ) : (
-                  <Moon className="w-5 h-5" />
-                )}
-              </motion.button>
-            </div>
-            <motion.button
-              className="md:hidden relative w-6 h-6"
-              onClick={toggleMenu}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            >
-              <AnimatePresence initial={false} mode="wait">
-                {isMenuOpen ? (
-                  <motion.div
-                    key="close"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <X className="w-6 h-6" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="menu"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Menu className="w-6 h-6" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.button>
-          </div>
-        </nav>
-        {isMenuOpen && (
-          <motion.div
-            className="md:hidden bg-white dark:bg-black py-2"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-          >
-            {[
-              "About",
-              "Skills",
-              "Projects",
-              "Education",
-              "Experience",
-              "Testimonials",
-              "Contact",
-            ].map((item) => (
-              <motion.a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="block px-6 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
-                onClick={toggleMenu}
-                whileHover={{ x: 10 }}
-              >
-                {item}
-              </motion.a>
-            ))}
-            <motion.button
-              onClick={toggleDarkMode}
-              className="block w-full text-left px-6 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
-              whileHover={{ x: 10 }}
-            >
-              {isDarkMode ? "Light Mode" : "Dark Mode"}
-            </motion.button>
-          </motion.div>
-        )}
-      </motion.header>
-
       <main className="container mx-auto px-6 py-8">
         <FadeInSection>
           <section id="about" className="mb-16">
@@ -312,6 +193,14 @@ export default function EnhancedPortfolioComponent() {
               transition={{ delay: 0.3 }}
             >
               Full Stack Developer
+            </motion.p>
+            <motion.p
+              className="mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              📍 Edmonton, AB, Canada
             </motion.p>
             <motion.p
               className="mb-4"

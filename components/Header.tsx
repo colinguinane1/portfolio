@@ -36,7 +36,7 @@ export default function NHeader() {
       >
         <div className="flex items-center mt-0 md:mt-[8px] w-full justify-between">
           <div className="flex items-center gap-4">
-            <a href="/" className="font-bold border text-2xl">
+            <a href="/" className="font-bold border p-1 rounded-md">
               CG
             </a>
           </div>{" "}
