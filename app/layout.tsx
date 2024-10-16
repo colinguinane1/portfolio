@@ -19,11 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={` ${dm_sans.className} antialiased`}>
-      <body>
+    <html
+      lang="en"
+      className={` ${dm_sans.className} grid place-content-center antialiased`}
+    >
+      <body className="max-w-2xl min-w-screen min-h-screen">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <div>{children}</div>
+          <div className="min-w-min">{children}</div>
         </ThemeProvider>
       </body>
     </html>
