@@ -1,8 +1,6 @@
-import { motion } from "framer-motion";
-import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import FadeInSection from "./FadeInView";
-import { ExternalLink, Github, Link2Off } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 export default function BentoGrid() {
   return (
@@ -11,7 +9,7 @@ export default function BentoGrid() {
         <Card className="col-span-3">
           <CardContent>Hi</CardContent>
         </Card>
-        <Card className="grid place-content-center h-full w-full">
+        <Card className="">
           <CardContent className="flex items-center gap-1 justify-center">
             <Github size={15} />
           </CardContent>
