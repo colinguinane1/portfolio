@@ -4,6 +4,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 @layer utilities {
@@ -15,7 +16,7 @@ body {
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --foreground: 0 0% 10.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
@@ -42,7 +43,7 @@ body {
   }
   .dark {
     --background: 0 0% 10.9%;
-    --foreground: 0 0% 98%;
+    --foreground: 0 0% 80%;
     --card: 0 0% 8.9%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;

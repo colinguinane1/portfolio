@@ -28,6 +28,7 @@ import {
   GraduationCap,
   Briefcase,
   MessageCircle,
+  ArrowUpRight,
 } from "lucide-react";
 
 export default function EnhancedPortfolioComponent() {
@@ -146,7 +147,7 @@ export default function EnhancedPortfolioComponent() {
   ];
 
   return (
-    <div className={`min-h-screen bg-background`}>
+    <div className={`min-h-screen bg-background text-foreground`}>
       <main className="container mx-auto px-6 py-8">
         <FadeInSection>
           <section id="about" className="mb-16">
@@ -192,16 +193,10 @@ export default function EnhancedPortfolioComponent() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <Button
-                variant="outline"
-                className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
-              >
+              <Button variant="outline">
                 <Github className="mr-2 h-4 w-4" /> GitHub
               </Button>
-              <Button
-                variant="outline"
-                className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
-              >
+              <Button variant="outline">
                 <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
               </Button>
             </motion.div>
@@ -233,12 +228,7 @@ export default function EnhancedPortfolioComponent() {
                     visible: { opacity: 1, y: 0 },
                   }}
                 >
-                  <Badge
-                    variant="secondary"
-                    className="bg-gray-200 text-black dark:bg-gray-700 dark:text-white"
-                  >
-                    {skill}
-                  </Badge>
+                  <Badge variant="secondary">{skill}</Badge>
                 </motion.div>
               ))}
             </motion.div>
@@ -276,12 +266,16 @@ export default function EnhancedPortfolioComponent() {
                                 >
                                   {tech}
                                 </Badge>
-                              ))}
-                            </div>
+                              ))}{" "}
+                            </div>{" "}
+                            <Button variant={"outline"} className="mt-4">
+                              <ArrowUpRight className="mr-1" size={20} />
+                              Learn More
+                            </Button>
                           </CardContent>
                         </Card>
                       </DialogTrigger>
-                      <DialogContent className="sm:max-w-[425px] bg-white dark:bg-gray-800 text-black dark:text-white">
+                      <DialogContent className="sm:max-w-[425px] rounded-lg bg-card ">
                         <DialogHeader>
                           <DialogTitle>{project.title}</DialogTitle>
                           <DialogDescription className="text-gray-600 dark:text-gray-300">
@@ -300,7 +294,6 @@ export default function EnhancedPortfolioComponent() {
                           <div className="flex space-x-4">
                             <Button
                               variant="outline"
-                              className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
                               onClick={() =>
                                 window.open(project.github, "_blank")
                               }
@@ -309,7 +302,6 @@ export default function EnhancedPortfolioComponent() {
                             </Button>
                             <Button
                               variant="outline"
-                              className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black  dark:hover:bg-gray-200"
                               onClick={() =>
                                 window.open(project.live, "_blank")
                               }
@@ -339,20 +331,22 @@ export default function EnhancedPortfolioComponent() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
                 >
-                  <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-                    <CardHeader>
-                      <CardTitle className="flex items-center">
-                        <GraduationCap className="mr-2 h-5 w-5" />
-                        {edu.degree}
-                      </CardTitle>
-                      <CardDescription>
-                        {edu.institution} | {edu.year}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <p>{edu.description}</p>
-                    </CardContent>
-                  </Card>
+                  <FadeInSection>
+                    <Card className="bg-card">
+                      <CardHeader>
+                        <CardTitle className="flex items-center">
+                          <GraduationCap className="mr-2 h-5 w-5" />
+                          {edu.degree}
+                        </CardTitle>
+                        <CardDescription>
+                          {edu.institution} | {edu.year}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p>{edu.description}</p>
+                      </CardContent>
+                    </Card>
+                  </FadeInSection>
                 </motion.div>
               ))}
             </div>
@@ -370,7 +364,7 @@ export default function EnhancedPortfolioComponent() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
                 >
-                  <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                  <Card className="bg-card">
                     <CardHeader>
                       <CardTitle className="flex items-center">
                         <Briefcase className="mr-2 h-5 w-5" />
@@ -405,7 +399,7 @@ export default function EnhancedPortfolioComponent() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
                 >
-                  <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                  <Card className="bg-card">
                     <CardHeader>
                       <CardTitle className="flex items-center">
                         <MessageCircle className="mr-2 h-5 w-5" />
@@ -433,7 +427,7 @@ export default function EnhancedPortfolioComponent() {
               free to reach out!
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
+              <Button>
                 <Mail className="mr-2 h-4 w-4" /> Contact Me
               </Button>
             </motion.div>
@@ -441,7 +435,7 @@ export default function EnhancedPortfolioComponent() {
         </FadeInSection>
       </main>
 
-      <footer className="bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-4">
+      <footer className="py-4">
         <div className="container mx-auto px-6 text-center">
           <p>&copy; 2023 Colin Guinane. All rights reserved.</p>
         </div>
