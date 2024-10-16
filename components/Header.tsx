@@ -3,6 +3,7 @@ import { Squash as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ModeToggle } from "./theme-buton";
 
 export default function NHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,7 @@ export default function NHeader() {
           duration: 0.6,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="flex fixed w-full items-center flex-col px-4 py-1 border-b bg-card/50 backdrop-blur-xl overflow-hidden z-20" // Prevent content overflow
+        className="flex w-full items-center flex-col px-4 py-1  overflow-hidden z-20" // Prevent content overflow
       >
         <div className="flex items-center mt-0 md:mt-[8px] w-full justify-between">
           <div className="flex items-center gap-4">
@@ -47,7 +48,8 @@ export default function NHeader() {
               </Link>
             ))}
           </div>
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center justify-center">
+            <ModeToggle />
             <Hamburger toggle={setIsOpen} toggled={isOpen} rounded size={20} />
           </div>
         </div>
@@ -73,9 +75,9 @@ export default function NHeader() {
                 >
                   {nav.name}
                 </Link>
-              ))}
+              ))}{" "}
             </motion.nav>
-          )}
+          )}{" "}
         </AnimatePresence>
       </motion.header>
     </nav>
