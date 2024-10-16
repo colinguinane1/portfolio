@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import FadeInSection from "@/components/FadeInView";
-import Image from "next/image";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -146,13 +146,11 @@ export default function EnhancedPortfolioComponent() {
   ];
 
   return (
-    <div
-      className={`min-h-screen bg-white dark:bg-black text-black dark:text-white`}
-    >
+    <div className={`min-h-screen bg-background`}>
       <main className="container mx-auto px-6 py-8">
         <FadeInSection>
           <section id="about" className="mb-16">
-            <Image width={150} height={150} alt="pfp" src="/portrait.JPG" />
+            {/* <Image width={150} height={150} alt="pfp" src="/portrait.JPG" /> */}
             <motion.h1
               className="text-4xl font-bold mb-4"
               initial={{ opacity: 0, y: 20 }}
@@ -258,65 +256,72 @@ export default function EnhancedPortfolioComponent() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
                 >
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 cursor-pointer hover:shadow-lg transition-shadow duration-300">
-                        <CardHeader>
-                          <CardTitle>{project.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <CardDescription className="text-gray-600 dark:text-gray-300">
+                  <FadeInSection>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Card className="bg-card border cursor-pointer hover:shadow-lg transition-shadow duration-300">
+                          <CardHeader>
+                            <CardTitle>{project.title}</CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                            <CardDescription className="text-gray-600 dark:text-gray-300">
+                              {project.description}
+                            </CardDescription>
+                            <div className="mt-4 flex flex-wrap gap-2">
+                              {project.technologies.map((tech, techIndex) => (
+                                <Badge
+                                  key={techIndex}
+                                  variant="outline"
+                                  className="border-gray-500 text-gray-500 dark:border-gray-400 dark:text-gray-400"
+                                >
+                                  {tech}
+                                </Badge>
+                              ))}
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[425px] bg-white dark:bg-gray-800 text-black dark:text-white">
+                        <DialogHeader>
+                          <DialogTitle>{project.title}</DialogTitle>
+                          <DialogDescription className="text-gray-600 dark:text-gray-300">
                             {project.description}
-                          </CardDescription>
-                          <div className="mt-4 flex flex-wrap gap-2">
-                            {project.technologies.map((tech, techIndex) => (
-                              <Badge
-                                key={techIndex}
-                                variant="outline"
-                                className="border-gray-500 text-gray-500 dark:border-gray-400 dark:text-gray-400"
-                              >
-                                {tech}
-                              </Badge>
-                            ))}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="mt-4">
+                          <h4 className="font-semibold mb-2">
+                            Project Details:
+                          </h4>
+                          <p className="mb-2">{project.longDescription}</p>
+                          <h4 className="font-semibold mb-2">Challenges:</h4>
+                          <p className="mb-2">{project.challenges}</p>
+                          <h4 className="font-semibold mb-2">Outcome:</h4>
+                          <p className="mb-4">{project.outcome}</p>
+                          <div className="flex space-x-4">
+                            <Button
+                              variant="outline"
+                              className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+                              onClick={() =>
+                                window.open(project.github, "_blank")
+                              }
+                            >
+                              <Github className="mr-2 h-4 w-4" /> GitHub
+                            </Button>
+                            <Button
+                              variant="outline"
+                              className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black  dark:hover:bg-gray-200"
+                              onClick={() =>
+                                window.open(project.live, "_blank")
+                              }
+                            >
+                              <ExternalLink className="mr-2 h-4 w-4" /> Live
+                              Demo
+                            </Button>
                           </div>
-                        </CardContent>
-                      </Card>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-[425px] bg-white dark:bg-gray-800 text-black dark:text-white">
-                      <DialogHeader>
-                        <DialogTitle>{project.title}</DialogTitle>
-                        <DialogDescription className="text-gray-600 dark:text-gray-300">
-                          {project.description}
-                        </DialogDescription>
-                      </DialogHeader>
-                      <div className="mt-4">
-                        <h4 className="font-semibold mb-2">Project Details:</h4>
-                        <p className="mb-2">{project.longDescription}</p>
-                        <h4 className="font-semibold mb-2">Challenges:</h4>
-                        <p className="mb-2">{project.challenges}</p>
-                        <h4 className="font-semibold mb-2">Outcome:</h4>
-                        <p className="mb-4">{project.outcome}</p>
-                        <div className="flex space-x-4">
-                          <Button
-                            variant="outline"
-                            className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
-                            onClick={() =>
-                              window.open(project.github, "_blank")
-                            }
-                          >
-                            <Github className="mr-2 h-4 w-4" /> GitHub
-                          </Button>
-                          <Button
-                            variant="outline"
-                            className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black  dark:hover:bg-gray-200"
-                            onClick={() => window.open(project.live, "_blank")}
-                          >
-                            <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
-                          </Button>
                         </div>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
+                      </DialogContent>
+                    </Dialog>
+                  </FadeInSection>
                 </motion.div>
               ))}
             </div>

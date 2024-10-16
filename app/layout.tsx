@@ -30,14 +30,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <div className="pt-[50px]">{children}</div>
+          <div>{children}</div>
         </ThemeProvider>
       </body>
     </html>
