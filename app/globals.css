@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: DM+sans-serif, Helvetica, sans-serif;
   
 }
 
