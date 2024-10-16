@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import FadeInSection from "@/components/FadeInView";
-
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -151,31 +151,43 @@ export default function EnhancedPortfolioComponent() {
       <main className="container mx-auto px-6 py-8">
         <FadeInSection>
           <section id="about" className="mb-16">
-            {/* <Image width={150} height={150} alt="pfp" src="/portrait.JPG" /> */}
-            <motion.h1
-              className="text-4xl font-bold mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              Colin Guinane
-            </motion.h1>
-            <motion.p
-              className="text-xl mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              Full Stack Developer
-            </motion.p>
-            <motion.p
-              className="mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              📍 Edmonton, AB, Canada
-            </motion.p>
+            <div className="flex gap-6 py-4">
+              {" "}
+              <Image
+                className="rounded-full border border-primary"
+                width={100}
+                height={100}
+                alt="pfp"
+                src="/portriat2.jpeg"
+              />{" "}
+              <div className="flex flex-col justify-center items-start">
+                <motion.h1
+                  className="text-4xl font-bold"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  Colin Guinane
+                </motion.h1>
+                <motion.p
+                  className="text-xl"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  Full Stack Developer
+                </motion.p>
+                <motion.p
+                  className="mb-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  Edmonton, AB, Canada 📍
+                </motion.p>
+              </div>
+            </div>
+
             <motion.p
               className="mb-4"
               initial={{ opacity: 0, y: 20 }}
