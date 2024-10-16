@@ -25,9 +25,10 @@ export default function NHeader() {
   return (
     <nav className="">
       <motion.header
-        initial={false}
+        initial={{ y: -100 }}
         animate={{
-          height: isOpen ? `${navHeight + 54}px` : "54px", // 64px is the closed header height
+          height: isOpen ? `${navHeight + 54}px` : "54px",
+          y: 0, // 64px is the closed header height
         }}
         transition={{
           duration: 0.6,
