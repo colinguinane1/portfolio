@@ -4,7 +4,7 @@ import Skills from "@/components/skills";
 import Projects from "@/components/projects";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
-import BentoGrid from "@/components/bento-grid";
+// import BentoGrid from "@/components/bentgrid";
 
 export default function EnhancedPortfolioComponent() {
   return (
