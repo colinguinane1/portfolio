@@ -7,16 +7,16 @@ export default function Hero() {
   return (
     <FadeInSection>
       <section id="about" className="mb-10">
-        <div className="flex  items-center  w-full gap-6 py-4">
+        <div className="flex  items-center h-full  w-full gap-6 py-4">
           {" "}
           <Image
-            className="rounded-full border  mb-6 w-32 h-32 border-foreground"
+            className="rounded-full border  mb-6 w-32 h-32 border-foreground/50"
             width={100}
             height={100}
             alt="pfp"
             src="/portriat2.jpeg"
           />{" "}
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start h-full mb-6">
             <motion.h1
               className="text-2xl font-bold"
               initial={{ opacity: 0, y: 20 }}

@@ -2,6 +2,7 @@ import FadeInSection from "./FadeInView";
 import { ExternalLink, Github, Linkedin, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { motion } from "framer-motion";
 export const Card = ({
   className,
   children,
@@ -80,7 +81,11 @@ export const CardSkeletonContainer = ({
 export default function BentoGrid() {
   return (
     <FadeInSection>
-      <div className="grid  grid-cols-4 mb-12 gap-4">
+      <motion.div
+        initial={{ y: 100 }}
+        animate={{ y: 0 }}
+        className="grid  grid-cols-4 mb-12 gap-4"
+      >
         <a className=" col-span-3 " href="mailto:colin@c-g.dev">
           <Card className="">
             <CardDescription className="flex items-center justify-center gap-1">
@@ -120,7 +125,7 @@ export default function BentoGrid() {
             </CardDescription>
           </Card>{" "}
         </Link>{" "}
-      </div>
+      </motion.div>
     </FadeInSection>
   );
 }
