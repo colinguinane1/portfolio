@@ -89,7 +89,6 @@ export default function BentoGrid() {
           </Card>
         </Link>
         <Link
-          className="flex items-center"
           href="https://www.linkedin.com/in/colinguinaneca/"
           target="_blank"
         >
@@ -101,10 +100,13 @@ export default function BentoGrid() {
           </Card>
         </Link>
 
-        <Card className="col-span-3 flex items-center justify-center">
-          <CardDescription className="flex items-center justify-center gap-2">
-            Check out my latest project <ExternalLink />
-          </CardDescription>
+        <Card className="col-span-3 flex w-full items-center justify-center">
+          {" "}
+          <Link href="https://devnotes.me" target="_blank">
+            <CardDescription className="flex w-full items-center gap-1">
+              Latest project <ExternalLink size={15} />
+            </CardDescription>
+          </Link>{" "}
         </Card>
       </div>
     </FadeInSection>
