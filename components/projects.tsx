@@ -22,23 +22,21 @@ import FadeInSection from "./FadeInView";
 export default function Projects() {
   const projects = [
     {
-      title: "E-commerce Platform",
-      description:
-        "A full-stack e-commerce solution with React frontend and Node.js backend.",
-      technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe API"],
+      title: "Blog Platform",
+      description: "A full stack blog platform intended for developers.",
+      technologies: ["Vercel", "Next.JS", "Supabase", "PostgreSQL", "Prisma"],
       longDescription:
-        "This e-commerce platform provides a seamless shopping experience for users. It features a responsive React frontend, a robust Node.js backend, and integrates with Stripe for secure payments. The platform includes user authentication, product catalog management, shopping cart functionality, and order processing.",
+        "devnotes.me is a platform for developers to share their knowledge and experiences. The site is built with Next.js and deployed on Vercel. User authentication, data storage, and a PostgreSQL are from Supabase. This project uses NextJS server actions to handle server-side logic and Prisma for database management.",
       challenges:
-        "One of the main challenges was implementing real-time inventory updates to prevent overselling. We solved this using MongoDB change streams and Socket.io for live updates.",
+        "Creating a full platform where users can create, edit, and delete posts, as well as like and comment on other posts. The users can also edit their profile and view other users' profiles.",
       outcome:
-        "The platform has successfully processed over 10,000 orders and maintains a 99.9% uptime.",
-      github: "https://github.com/johndoe/ecommerce-platform",
-      live: "https://example-ecommerce.com",
+        "devnotes has gained a small following of developers who use the platform to share their knowledge and experiences.",
+      github: "https://github.com/colinguinane1/devnotes.me",
+      live: "https://devnotes.me",
     },
     {
-      title: "Task Management App",
-      description:
-        "A collaborative task management tool with real-time updates.",
+      title: "Fast Food Ordering App",
+      description: "An app that allows users to order food from a restaurants.",
       technologies: ["React", "Socket.io", "Express", "PostgreSQL"],
       longDescription:
         "This task management application allows teams to collaborate in real-time. Users can create, assign, and track tasks, set deadlines, and communicate through comments. The app uses React for the frontend, Express for the backend, and PostgreSQL for data storage.",
@@ -50,7 +48,7 @@ export default function Projects() {
       live: "https://example-taskmanager.com",
     },
     {
-      title: "Weather Dashboard",
+      title: "Music Portfolio",
       description:
         "A weather application that provides real-time forecasts and historical data visualization.",
       technologies: ["React", "D3.js", "Node.js", "OpenWeatherMap API"],

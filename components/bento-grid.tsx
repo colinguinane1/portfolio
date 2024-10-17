@@ -1,5 +1,5 @@
 import FadeInSection from "./FadeInView";
-import { ExternalLink, Github, Linkedin } from "lucide-react";
+import { ExternalLink, Github, Linkedin, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 export const Card = ({
@@ -44,7 +44,10 @@ export const CardDescription = ({
 }) => {
   return (
     <p
-      className={cn("text-sm font-normal text-neutral-400 max-w-sm", className)}
+      className={cn(
+        "text-sm font-normal  text-neutral-400 max-w-sm",
+        className
+      )}
     >
       {children}
     </p>
@@ -77,14 +80,19 @@ export const CardSkeletonContainer = ({
 export default function BentoGrid() {
   return (
     <FadeInSection>
-      <div className="grid grid-cols-4 mb-12 gap-4">
-        <Card className="col-span-3">
-          <CardDescription>Edmonton, AB, Canada</CardDescription>
-        </Card>
+      <div className="grid  grid-cols-4 mb-12 gap-4">
+        <a className=" col-span-3 " href="mailto:colin@c-g.dev">
+          <Card className="">
+            <CardDescription className="flex items-center justify-center gap-1">
+              <Mail size={15} />
+              Contact
+            </CardDescription>
+          </Card>
+        </a>
         <Link href="https://github.com/colinguinane1" target="_blank">
           <Card className="flex items-center justify-center">
             <CardDescription>
-              <Github className="w-6 h-6 md:w-10 md:h-10" />
+              <Github size={20} />
             </CardDescription>
           </Card>
         </Link>
@@ -95,19 +103,23 @@ export default function BentoGrid() {
           {" "}
           <Card className="flex items-center justify-center">
             <CardDescription>
-              <Linkedin className="w-6 h-6 md:w-10 md:h-10" />
+              <Linkedin size={20} />
             </CardDescription>
           </Card>
         </Link>
-
-        <Card className="col-span-3 flex w-full items-center justify-center">
+        <Link
+          href="https://devnotes.me"
+          className="col-span-3 flex items-center justify-center"
+          target="_blank"
+        >
           {" "}
-          <Link href="https://devnotes.me" target="_blank">
-            <CardDescription className="flex w-full items-center gap-1">
+          <Card className="col-span-3 flex w-full items-center justify-center">
+            {" "}
+            <CardDescription className="flex w-full items-center justify-center gap-1">
               Latest project <ExternalLink size={15} />
             </CardDescription>
-          </Link>{" "}
-        </Card>
+          </Card>{" "}
+        </Link>{" "}
       </div>
     </FadeInSection>
   );
