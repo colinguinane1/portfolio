@@ -1,7 +1,7 @@
 import FadeInSection from "./FadeInView";
 import { ExternalLink, Github, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
-
+import Link from "next/link";
 export const Card = ({
   className,
   children,
@@ -12,7 +12,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "p-8 rounded-xl bg-card border dark:border-[rgba(255,255,255,0.10)] dark:bg-[rgba(40,40,40,0.30)] dark:shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] group",
+        "p-8 rounded-xl bg-card border active:scale-[0.99] hover:scale-[1.01] dark:border-[rgba(255,255,255,0.10)] dark:bg-[rgba(40,40,40,0.30)] dark:shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] group",
         className
       )}
     >
@@ -79,18 +79,28 @@ export default function BentoGrid() {
     <FadeInSection>
       <div className="grid grid-cols-4 mb-12 gap-4">
         <Card className="col-span-3">
-          <CardTitle>Edmonton, AB, Canada</CardTitle>
+          <CardDescription>Edmonton, AB, Canada</CardDescription>
         </Card>
-        <Card className="">
-          <CardTitle className="flex items-center gap-1 justify-center">
-            <Github className="w-10 h-10" />
-          </CardTitle>
-        </Card>
-        <Card>
-          <CardTitle>
-            <Linkedin className="w-10 h-10" />
-          </CardTitle>
-        </Card>
+        <Link href="https://github.com/colinguinane1" target="_blank">
+          <Card className="flex items-center justify-center">
+            <CardDescription>
+              <Github className="w-6 h-6 md:w-10 md:h-10" />
+            </CardDescription>
+          </Card>
+        </Link>
+        <Link
+          className="flex items-center"
+          href="https://www.linkedin.com/in/colinguinaneca/"
+          target="_blank"
+        >
+          {" "}
+          <Card className="flex items-center justify-center">
+            <CardDescription>
+              <Linkedin className="w-6 h-6 md:w-10 md:h-10" />
+            </CardDescription>
+          </Card>
+        </Link>
+
         <Card className="col-span-3 flex items-center justify-center">
           <CardDescription className="flex items-center justify-center gap-2">
             Check out my latest project <ExternalLink />

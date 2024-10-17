@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <FadeInSection>
       <section id="about" className="mb-16">
-        <div className="flex-col md:flex-row  items-center w-full gap-6 py-4">
+        <div className="flex  items-center w-full gap-6 py-4">
           {" "}
           <Image
             className="rounded-full border mb-6 w-32 h-32 border-primary"
@@ -34,14 +34,6 @@ export default function Hero() {
               transition={{ delay: 0.3 }}
             >
               Full Stack Developer
-            </motion.p>
-            <motion.p
-              className="mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              Edmonton, AB, Canada 📍
             </motion.p>
           </div>
         </div>
