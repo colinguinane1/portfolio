@@ -37,7 +37,7 @@ export default function Projects() {
     {
       title: "Fast Food Ordering App",
       description: "An app that allows users to order food from a restaurants.",
-      technologies: ["React", "Socket.io", "Express", "PostgreSQL"],
+      technologies: ["Next.JS", "Firebase", "Firestore", "PostgreSQL"],
       longDescription:
         "This task management application allows teams to collaborate in real-time. Users can create, assign, and track tasks, set deadlines, and communicate through comments. The app uses React for the frontend, Express for the backend, and PostgreSQL for data storage.",
       challenges:
