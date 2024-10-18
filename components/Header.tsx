@@ -15,6 +15,8 @@ export default function NHeader() {
     { name: "Home", href: "/" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
+    { name: "Blog", href: "/blog" },
+    { name: "UI", href: "/ui" },
   ];
 
   useEffect(() => {
@@ -35,7 +37,9 @@ export default function NHeader() {
           duration: 0.6,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="flex w-full items-center flex-col px-4 py-1  overflow-hidden z-20" // Prevent content overflow
+        className={`flex w-full items-center ${
+          isOpen && "border-b"
+        }  flex-col px-4 py-1  overflow-hidden z-20`} // Prevent content overflow
       >
         <div className="flex items-center mt-0 md:mt-[8px] w-full justify-between">
           <div className="flex items-center gap-4">
@@ -44,6 +48,7 @@ export default function NHeader() {
             </a>
           </div>{" "}
           <div className=" hidden md:flex  items-center gap-6">
+            <ModeToggle />
             {NavigationData.map((nav) => (
               <Link className="font-bold" key={nav.name} href={nav.href}>
                 {nav.name}
