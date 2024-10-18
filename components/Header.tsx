@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ModeToggle } from "./theme-buton";
+import { Button } from "./ui/button";
 
 export default function NHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +52,17 @@ export default function NHeader() {
           </div>
           <div className="md:hidden flex items-center justify-center">
             <ModeToggle />
-            <Hamburger toggle={setIsOpen} toggled={isOpen} rounded size={20} />
+            <Button size={"icon"} className="" variant={"ghost"}>
+              <div className="">
+                {" "}
+                <Hamburger
+                  toggle={setIsOpen}
+                  toggled={isOpen}
+                  rounded
+                  size={20}
+                />
+              </div>
+            </Button>
           </div>
         </div>
 

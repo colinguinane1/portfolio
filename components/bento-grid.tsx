@@ -46,7 +46,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "text-sm font-normal  text-neutral-400 max-w-sm",
+        "text-sm font-normal  dark:text-neutral-400 max-w-sm",
         className
       )}
     >

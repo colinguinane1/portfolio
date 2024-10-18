@@ -39,27 +39,25 @@ export default function Projects() {
       description: "An app that allows users to order food from a restaurants.",
       technologies: ["Next.JS", "Firebase", "Firestore", "PostgreSQL"],
       longDescription:
-        "This task management application allows teams to collaborate in real-time. Users can create, assign, and track tasks, set deadlines, and communicate through comments. The app uses React for the frontend, Express for the backend, and PostgreSQL for data storage.",
+        "This app allows users to browse a menu, add items to their cart, and place an order. The app uses Next.js for the frontend and Firebase for the database.",
       challenges:
-        "Implementing real-time updates across multiple clients was challenging. We used Socket.io to ensure all connected clients receive instant updates when tasks are modified.",
-      outcome:
-        "The app has been adopted by several small to medium-sized companies, improving their project management efficiency by up to 30%.",
-      github: "https://github.com/johndoe/task-manager",
-      live: "https://example-taskmanager.com",
+        "Creating a seamless user experience for ordering food online.",
+      outcome: "Increased knowledge of Next.js and Firebase.",
+      github: "https://github.com/colinguinane1/fast-food-app",
+      live: "https://food.colinguinane.com",
     },
     {
       title: "Music Portfolio",
-      description:
-        "A weather application that provides real-time forecasts and historical data visualization.",
-      technologies: ["React", "D3.js", "Node.js", "OpenWeatherMap API"],
+      description: "A portfolio website for the music i compose as a hobby.",
+      technologies: ["NextJS", "Google Cloud"],
       longDescription:
-        "This weather dashboard offers users detailed weather information for any location. It includes current conditions, hourly and daily forecasts, and historical weather data visualizations. The app uses React for the UI, D3.js for data visualization, and integrates with the OpenWeatherMap API for weather data.",
+        "This project is a portfolio website for my music compositions. The site uses React for the frontend and Node.js for the backend. The weather data is fetched from the OpenWeatherMap API.",
       challenges:
-        "Creating intuitive and informative data visualizations for complex weather data was a significant challenge. We used D3.js to create custom, interactive charts that display trends clearly.",
+        "Creating a responsive and visually appealing dashboard that displays my music.",
       outcome:
-        "The dashboard has gained popularity among outdoor enthusiasts and event planners, with over 50,000 monthly active users.",
-      github: "https://github.com/johndoe/weather-dashboard",
-      live: "https://example-weather.com",
+        "A clean and modern portfolio website that showcases my music compositions.",
+      github: "https://github.com/colinguinane1/MusicPortfolio",
+      live: "https://music.colinguinane.com",
     },
   ];
   return (
@@ -104,8 +102,10 @@ export default function Projects() {
                     </Card>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[425px] rounded-lg bg-card ">
-                    <DialogHeader>
-                      <DialogTitle>{project.title}</DialogTitle>
+                    <DialogHeader className="text-left">
+                      <DialogTitle className="text-2xl">
+                        {project.title}
+                      </DialogTitle>
                       <DialogDescription className="text-gray-600 dark:text-gray-300">
                         {project.description}
                       </DialogDescription>

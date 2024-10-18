@@ -13,7 +13,7 @@ export default function Contact() {
           free to reach out!
         </p>
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Button>
+          <Button variant={"outline"}>
             <Mail className="mr-2 h-4 w-4" /> Contact Me
           </Button>
         </motion.div>
