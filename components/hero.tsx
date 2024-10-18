@@ -50,9 +50,8 @@ export default function Hero() {
           >
             Edmonton, AB
           </Link>{" "}
-          experienced in building applications with Next.js and React. I focus
-          on clean code and solving problems through development while staying
-          up-to-date with new technologies.
+          experienced in building full-stack, cross-platform applications with
+          React.
         </motion.p>
         <motion.div
           className="flex space-x-4"
