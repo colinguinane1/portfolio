@@ -8,14 +8,13 @@ export default function Skills() {
     "TypeScript",
     "React",
     "Node.js",
+    "PostgreSQL",
+    "Next.JS",
     "Express",
     "MongoDB",
     "SQL",
-    "GraphQL",
     "REST APIs",
     "Git",
-    "AWS",
-    "Docker",
   ];
 
   return (

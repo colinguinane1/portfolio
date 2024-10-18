@@ -13,8 +13,8 @@ export default function NHeader() {
 
   const NavigationData = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
