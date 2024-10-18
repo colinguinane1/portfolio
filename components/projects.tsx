@@ -114,7 +114,7 @@ export default function Projects() {
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-[425px] rounded-lg bg-card ">
                       <DialogHeader className="text-left">
-                        <DialogTitle className="text-2xl">
+                        <DialogTitle className="text-2xl font-extrabold  text-primary">
                           {project.title}
                         </DialogTitle>
                         <DialogDescription className="text-gray-600 dark:text-gray-300">
@@ -122,11 +122,17 @@ export default function Projects() {
                         </DialogDescription>
                       </DialogHeader>
                       <div className="mt-4">
-                        <h4 className="font-semibold mb-2">Project Details:</h4>
+                        <h4 className="font-semibold mb-2  text-primary">
+                          Project Details:
+                        </h4>
                         <p className="mb-2">{project.longDescription}</p>
-                        <h4 className="font-semibold mb-2">Challenges:</h4>
+                        <h4 className="font-semibold mb-2  text-primary">
+                          Challenges:
+                        </h4>
                         <p className="mb-2">{project.challenges}</p>
-                        <h4 className="font-semibold mb-2">Outcome:</h4>
+                        <h4 className="font-semibold mb-2  text-primary">
+                          Outcome:
+                        </h4>
                         <p className="mb-4">{project.outcome}</p>
                         <div className="flex space-x-4">
                           <Button
@@ -179,18 +185,27 @@ export default function Projects() {
                     </DrawerTrigger>
                     <DrawerContent className="">
                       <DrawerHeader className="text-left">
-                        <DrawerTitle> {project.title}</DrawerTitle>
+                        <DrawerTitle className="text-2xl font-extrabold text-primary">
+                          {" "}
+                          {project.title}
+                        </DrawerTitle>
 
                         <DrawerDescription>
                           {project.description}
                         </DrawerDescription>
                       </DrawerHeader>
                       <div className="p-4">
-                        <h4 className="font-semibold mb-2">Project Details:</h4>
+                        <h4 className="font-semibold mb-2  text-primary">
+                          Project Details:
+                        </h4>
                         <p className="mb-2">{project.longDescription}</p>
-                        <h4 className="font-semibold mb-2">Challenges:</h4>
+                        <h4 className="font-semibold mb-2  text-primary">
+                          Challenges:
+                        </h4>
                         <p className="mb-2">{project.challenges}</p>
-                        <h4 className="font-semibold mb-2">Outcome:</h4>
+                        <h4 className="font-semibold mb-2  text-primary">
+                          Outcome:
+                        </h4>
                         <p className="mb-4">{project.outcome}</p>
                         <div className="flex space-x-4">
                           <Button
