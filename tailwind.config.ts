@@ -2,11 +2,15 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
     darkMode: ["class"],
-    content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+   content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "./(app|components)/**/*.{ts,tsx,mdx}",
+    "./mdx-components.tsx",
   ],
+  prefix: "",
   theme: {
   	extend: {
   		colors: {
@@ -58,6 +62,12 @@ const config: Config = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
-};
+   plugins: [require("tailwindcss-animate"),],
+  safelist: [
+    {
+      pattern: /hljs+/,
+    },
+  ],
+} satisfies Config;
+
 export default config;
