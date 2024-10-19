@@ -1,8 +1,11 @@
+"use client";
+
 import FadeInSection from "./FadeInView";
-import { ExternalLink, Github, Linkedin, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { ExternalLink, Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
+
 export const Card = ({
   className,
   children,

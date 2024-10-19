@@ -1,23 +1,5 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { useMediaQuery } from "@/lib/media-query";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { motion } from "framer-motion";
-import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
+"use client";
+
 import FadeInSection from "./FadeInView";
 import {
   Drawer,
@@ -27,6 +9,26 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "./ui/drawer";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { useMediaQuery } from "@/lib/media-query";
+import { motion } from "framer-motion";
+import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 
 export default function Projects() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -72,7 +74,7 @@ export default function Projects() {
   ];
   return (
     <FadeInSection>
-      <section id="projects" className="mb-16">
+      <section id="projects" className="mb-8">
         <h2 className="text-2xl font-bold mb-4">Projects</h2>
         <div className="grid gap-6   ">
           {projects.map((project, index) => (

@@ -1,5 +1,7 @@
-import { useEffect } from "react";
+"use client";
+
 import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 export const FadeInSection = ({ children }: { children: React.ReactNode }) => {

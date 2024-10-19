@@ -1,3 +1,7 @@
+import BlogCard from "@/components/blog-card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { ChevronRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import fs from "node:fs";
@@ -20,7 +24,7 @@ interface PostMetadata {
   [key: string]: unknown;
 }
 
-async function getAllPosts(): Promise<Post[]> {
+export async function getAllPosts(): Promise<Post[]> {
   const dir = path.join(process.cwd(), "content", "blogs");
   const files = fs.readdirSync(dir);
 
@@ -58,35 +62,27 @@ async function getAllPosts(): Promise<Post[]> {
   return posts;
 }
 
-export default async function Home() {
+export default async function Blogs() {
   const posts = await getAllPosts();
 
   return (
-    <div className="flex flex-col gap-8 max-w-3xl z-10 w-full items-center justify-between">
-      <div>
-        <h2 className="text-5xl sm:text-6xl font-black">Blog</h2>
-      </div>
-      <div className="text-lg">
-        <p>
-          Welcome to the blog! Here you will find a collection of articles and
-          posts.
-        </p>
-      </div>
+    <section className="w-screen">
+      <div className="flex flex-col gap-8 p-4 max-w-3xl z-10 w-full  justify-between">
+        <div>
+          <h2 className="text-5xl text-left sm:text-6xl font-black">Blog</h2>
+        </div>
+        <div className="text-lg">
+          <p>I occasionally write about something that interests me.</p>
+        </div>
 
-      <div className="w-full">
-        <div className="space-y-4">
-          {posts.map((post) => (
-            <div key={post.slug} className="p-4 border rounded-md shadow">
-              <Link className="flex flex-col" href={`/posts/${post.slug}`}>
-                <div className="text-2xl font-bold hover:underline">
-                  {post.metadata.title}
-                </div>
-                <div>{post.metadata.publishDate}</div>
-              </Link>
-            </div>
-          ))}
+        <div className="w-full">
+          <div className="space-y-4">
+            {posts.map((post) => (
+              <BlogCard post={post} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

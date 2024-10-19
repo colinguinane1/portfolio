@@ -1,6 +1,8 @@
+"use client";
+
+import FadeInSection from "./FadeInView";
 import { Badge } from "./ui/badge";
 import { motion } from "framer-motion";
-import FadeInSection from "./FadeInView";
 
 export default function Skills() {
   const skills = [

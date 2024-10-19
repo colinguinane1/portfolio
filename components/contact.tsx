@@ -1,7 +1,9 @@
-import { Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
+"use client";
+
 import FadeInSection from "@/components/FadeInView";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Mail } from "lucide-react";
 
 export default function Contact() {
   return (

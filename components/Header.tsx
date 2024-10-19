@@ -4,7 +4,7 @@ import { ModeToggle } from "./theme-buton";
 import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cross as Hamburger } from "hamburger-react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { useState, useEffect, useRef } from "react";
 
 export default function NHeader() {

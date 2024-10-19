@@ -63,11 +63,5 @@ const config: Config = {
   	}
   },
    plugins: [require("tailwindcss-animate"),],
-  safelist: [
-    {
-      pattern: /hljs+/,
-    },
-  ],
-} satisfies Config;
-
+}
 export default config;
