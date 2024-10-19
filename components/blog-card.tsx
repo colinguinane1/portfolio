@@ -1,6 +1,12 @@
 import FadeInSection from "./FadeInView";
+import { CardDescription } from "./bento-grid";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 import { Post } from "@/lib/get-posts";
 import { ChevronRight } from "lucide-react";
 import { Link } from "next-view-transitions";
@@ -25,12 +31,14 @@ export default function BlogCard({ post }: BlogCardProps) {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="flex justify-between">
-              {post.metadata.publishDate}
+            <CardDescription>
+              <div className="flex items-center  pb-4 justify-between">
+                {post.metadata.publishDate}
+              </div>
               <Button variant={"outline"}>
                 Read <ChevronRight className="ml-1" size={15} />
               </Button>
-            </div>
+            </CardDescription>
           </CardContent>
         </Card>
       </Link>
