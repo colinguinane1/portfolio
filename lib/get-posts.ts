@@ -7,6 +7,8 @@ export type Post = {
   metadata: {
     title: string;
     publishDate: string;
+    category: string;
+    description: string;
   };
 };
 
