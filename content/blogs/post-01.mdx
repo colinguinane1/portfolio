@@ -56,7 +56,7 @@ Here's another paragraph followed by a blockquote:
 
 Here's a code block:
 
-```javascript
+```javascript showLineNumbers
 const greet = (name) => {
   return `Hello, ${name}!`;
 };
@@ -68,7 +68,7 @@ console.log(greet("World"));
 
 Styling for MDX content is handled via the mdx-components module, which provides a set of components for styling content. This sample MDX file demonstrates the styling of various HTML elements using the mdx-components module.
 
-```typescript
+```typescript showLineNumbers
     h1: (props) => <h1 className="text-4xl font-black pb-4" {...props} />,
     h2: (props) => <h2 className="text-3xl font-bold pb-4" {...props} />,
     p: (props) => <p className="text-lg pb-4" {...props} />,

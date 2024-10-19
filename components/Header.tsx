@@ -1,10 +1,11 @@
 "use client";
+
+import { ModeToggle } from "./theme-buton";
+import { Button } from "./ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 import { Cross as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ModeToggle } from "./theme-buton";
-import { Button } from "./ui/button";
 
 export default function NHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function NHeader() {
     { name: "Home", href: "/" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
-    { name: "Blog", href: "/blog" },
+    { name: "Blog", href: "/posts" },
     { name: "UI", href: "/ui" },
   ];
 
