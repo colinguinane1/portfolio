@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../components/Header";
 import { ThemeProvider } from "@/components/theme-provider";
-
+import { ViewTransitions } from "next-view-transitions";
 import { DM_Sans } from "next/font/google";
 
 // If loading a variable font, you don't need to specify the font weight
@@ -25,16 +25,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={` ${dm_sans.className} grid place-content-center antialiased`}
-    >
-      <body className="max-w-2xl min-w-screen min-w-96 min-h-screen">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Header />
-          <div className="min-w-screen">{children}</div>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html
+        lang="en"
+        className={` ${dm_sans.className} grid place-content-center antialiased`}
+      >
+        <body className="max-w-2xl min-w-screen min-w-96 min-h-screen">
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Header />
+            <div className="min-w-screen mt-10">{children}</div>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
