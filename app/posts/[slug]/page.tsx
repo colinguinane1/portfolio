@@ -1,4 +1,5 @@
 import ClientMDXContent from "../MDXClient";
+import { Badge } from "@/components/ui/badge";
 import type { Metadata } from "next";
 import fs from "node:fs";
 import path from "node:path";
@@ -60,10 +61,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </h1>
           </div>
           <div className="pb-8">
-            <p className="font-semibold text-sm sm:text-base md:text-lg">
+            <p className="font-semibold text-sm mb-4 sm:text-base md:text-lg">
               <span className="pr-1">{post.metadata.publishDate}</span>
-              {post.metadata.category}
             </p>
+            <Badge> {post.metadata.category}</Badge>
           </div>
           <ClientMDXContent slug={slug} />
         </article>

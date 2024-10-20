@@ -10,7 +10,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h4: (props) => <h4 className="text-xl font-medium pb-4" {...props} />,
     h5: (props) => <h5 className="text-lg font-normal pb-4" {...props} />,
     h6: (props) => <h6 className="text-base font-light pb-4" {...props} />,
-    p: (props) => <p className="text-lg mb-4" {...props} />,
+    p: (props) => <p className="mb-4" {...props} />,
     li: (props) => <li className="pb-1" {...props} />,
     ul: (props) => <ul className="list-disc pl-6 pb-4" {...props} />,
     ol: (props) => <ol className="list-decimal pl-6 pb-4" {...props} />,

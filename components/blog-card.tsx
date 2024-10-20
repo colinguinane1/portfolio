@@ -31,6 +31,7 @@ export default function BlogCard({ post }: BlogCardProps) {
               <div className="flex items-center  pb-4 justify-between">
                 {post.metadata.publishDate}
               </div>
+              <div className=" pb-4">{post.metadata.description}</div>
               <Badge
                 variant="outline"
                 className="border-gray-500 mb-4 text-gray-500 dark:border-gray-400 dark:text-gray-400"
