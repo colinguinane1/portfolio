@@ -9,6 +9,7 @@ export type Post = {
     publishDate: string;
     category: string;
     description: string;
+    image: string;
   };
 };
 

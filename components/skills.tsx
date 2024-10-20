@@ -3,20 +3,28 @@
 import FadeInSection from "./FadeInView";
 import { Badge } from "./ui/badge";
 import { motion } from "framer-motion";
+import {
+  Code,
+  Database,
+  GitBranch,
+  LucideServerCog,
+  Server,
+  Settings,
+} from "lucide-react";
 
 export default function Skills() {
+  const iconSize = 15;
   const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Node.js",
-    "PostgreSQL",
-    "Next.JS",
-    "Express",
-    "MongoDB",
-    "SQL",
-    "REST APIs",
-    "Git",
+    { label: "JavaScript", icon: <Code size={iconSize} /> },
+    { label: "TypeScript", icon: <Code size={iconSize} /> },
+    { label: "React", icon: <Settings size={iconSize} /> },
+    { label: "Node.js", icon: <Server size={iconSize} /> },
+    { label: "Next.js", icon: <Settings size={iconSize} /> },
+    { label: "Express", icon: <Server size={iconSize} /> },
+    { label: "MongoDB", icon: <Database size={iconSize} /> },
+    { label: "SQL", icon: <Database size={iconSize} /> },
+    { label: "REST APIs", icon: <LucideServerCog size={iconSize} /> },
+    { label: "Git", icon: <GitBranch size={iconSize} /> },
   ];
 
   return (
@@ -45,7 +53,11 @@ export default function Skills() {
                 visible: { opacity: 1, y: 0 },
               }}
             >
-              <Badge variant="secondary">{skill}</Badge>
+              <Badge className="flex items-center gap-2" variant="secondary">
+                {skill.icon}
+
+                {skill.label}
+              </Badge>
             </motion.div>
           ))}
         </motion.div>

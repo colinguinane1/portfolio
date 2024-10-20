@@ -1,6 +1,7 @@
 import ClientMDXContent from "../MDXClient";
 import { Badge } from "@/components/ui/badge";
 import type { Metadata } from "next";
+import Image from "next/image";
 import fs from "node:fs";
 import path from "node:path";
 import React from "react";
@@ -52,19 +53,32 @@ export default async function Page({ params }: { params: { slug: string } }) {
   // Dynamically import the MDX file based on the slug
 
   return (
-    <div className="px-4 sm:px-6 md:px-8 lg:px-12">
+    <div className="px-4 sm:px-6  md:px-8 lg:px-12">
       <div className="flex justify-center items-center flex-col gap-6">
-        <article className="prose lg:prose-xl md:prose-lg sm:prose sm:prose-sm w-full">
-          <div className="pb-10">
+        <article className="prose mt-10 flex flex-col gap-4 w-full">
+          {post.metadata.image && (
+            <Image
+              src={post.metadata.image ? post.metadata.image : "/gradient.jpg"}
+              width={800}
+              height={450}
+              alt="Blog Post Image"
+              className="rounded-lg pb-4 h-full w-full transition-all group-hover:scale-[1.01]"
+              style={{}}
+            />
+          )}
+          <div className="">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black capitalize leading-tight">
               {post.metadata.title}
             </h1>
           </div>
-          <div className="pb-8">
-            <p className="font-semibold text-sm mb-4 sm:text-base md:text-lg">
+          <div className="">
+            <p className="font-semibold text-sm  sm:text-base md:text-lg">
               <span className="pr-1">{post.metadata.publishDate}</span>
             </p>
-            <Badge> {post.metadata.category}</Badge>
+            <div className="mt-2">
+              {" "}
+              <Badge> {post.metadata.category}</Badge>
+            </div>
           </div>
           <ClientMDXContent slug={slug} />
         </article>

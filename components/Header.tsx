@@ -14,8 +14,8 @@ export default function NHeader() {
 
   const NavigationData = [
     { name: "Home", href: "/" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Contact", href: "/#contact" },
     { name: "Blog", href: "/posts" },
     { name: "UI", href: "/ui" },
   ];
@@ -35,14 +35,15 @@ export default function NHeader() {
           y: 0, // 64px is the closed header height
         }}
         transition={{
-          duration: 0.6,
+          duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className={`flex w-full items-center ${
-          isOpen && "border-b"
+        exit={{ y: 0 }}
+        className={`flex absolute top-1 left-0   w-full  items-center ${
+          isOpen && "border-b bg-background/50 backdrop-blur-lg"
         }  flex-col px-4 py-1  overflow-hidden z-20`} // Prevent content overflow
       >
-        <div className="flex items-center mt-0 md:mt-[8px] w-full justify-between">
+        <div className="flex items-center mt-0 max-w-3xl md:mt-[8px] w-full justify-between">
           <div className="flex items-center gap-4">
             <a href="/" className="font-bold p-1 rounded-md">
               c-g.dev
@@ -56,7 +57,7 @@ export default function NHeader() {
               </Link>
             ))}
           </div>
-          <div className="md:hidden flex items-center justify-center">
+          <div className="md:hidden flex gap-2 items-center justify-center">
             <ModeToggle />
             <Button size={"icon"} className="" variant={"ghost"}>
               <div className="">

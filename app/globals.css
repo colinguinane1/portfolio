@@ -6,6 +6,7 @@
 
 *{
   scroll-behavior: smooth;
+  scroll-margin: 1rem;
 }
 
 code[data-line-numbers] {
@@ -38,6 +39,7 @@ code[data-line-numbers-max-digits="4"]>[data-line]::before {
 
 pre {
   overflow-x: auto;
+  font-size: small;
   border-radius: 0.5rem;
   padding: 1rem 0;
   margin-bottom: 2rem;

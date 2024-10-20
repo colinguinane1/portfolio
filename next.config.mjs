@@ -22,6 +22,27 @@ const withMDX = nextMDX({
 });
  
 /** @type {import('next').NextConfig} */
-const nextConfig = { reactStrictMode: true };
+const nextConfig = { reactStrictMode: true ,  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.clerk.com',
+  
+      },
+      {
+        protocol: 'https',
+        hostname: 'external-content.duckduckgo.com',
+      },
+      {
+protocol: 'https',
+hostname: 'gktuazxnjcwahdrwuchb.supabase.co'
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com'
+      }
+    ],
+  },
+};
  
 export default withMDX(nextConfig);
