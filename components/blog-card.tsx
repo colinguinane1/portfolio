@@ -12,7 +12,7 @@ export default function BlogCard({ post }: BlogCardProps) {
     <FadeInSection>
       <Link key={post.slug} href={`/posts/${post.slug}`}>
         <div className="bg-transparent p-0 border-none shadow-none justify-between w-full flex items-center flex-row-reverse">
-          <div className="w-1/2">
+          <div className="">
             <Image
               src={post.metadata.image ? post.metadata.image : "/gradient.jpg"}
               width={800}
@@ -25,7 +25,7 @@ export default function BlogCard({ post }: BlogCardProps) {
               }}
             />
           </div>
-          <div className="py-4 w-1/2">
+          <div className="py-4 w-full">
             <div>
               <div className="flex items-center justify-between">
                 {post.metadata.publishDate}
