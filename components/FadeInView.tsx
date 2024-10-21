@@ -8,7 +8,7 @@ export const FadeInSection = ({ children }: { children: React.ReactNode }) => {
   const controls = useAnimation(); // Animation controller
   const [ref, inView] = useInView({
     triggerOnce: true, // Ensures the animation happens only once
-    threshold: 0.2, // Adjust visibility threshold
+    threshold: 0.1, // Adjust visibility threshold
   });
 
   useEffect(() => {

@@ -17,7 +17,7 @@ export default function NHeader() {
     { name: "Projects", href: "/#projects" },
     { name: "Contact", href: "/#contact" },
     { name: "Blog", href: "/posts" },
-    { name: "UI", href: "/ui" },
+    { name: "UI", href: "/components" },
   ];
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function NHeader() {
       <motion.header
         initial={{ y: -100 }}
         animate={{
-          height: isOpen ? `${navHeight + 54}px` : "54px",
+          height: isOpen ? `${navHeight + 54}px` : "64px",
           y: 0, // 64px is the closed header height
         }}
         transition={{

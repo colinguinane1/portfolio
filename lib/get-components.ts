@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-export type uiBlog = {
+export type Component = {
   slug: string;
   metadata: {
     title: string;
@@ -13,7 +13,7 @@ export type uiBlog = {
 };
 
 // Helper function to get all posts
-export async function getUiContent(): Promise<uiBlog[]> {
+export async function getAllComponents(): Promise<Component[]> {
   const dir = path.join(process.cwd(), "content", "ui");
   const files = fs.readdirSync(dir);
 
