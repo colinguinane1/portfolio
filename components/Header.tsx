@@ -39,15 +39,15 @@ export default function NHeader() {
           ease: [0.16, 1, 0.3, 1],
         }}
         exit={{ y: 0 }}
-        className={`flex absolute top-1 left-0   w-full  items-center ${
+        className={`flex md:absolute  md:top-0 left-0   w-full  items-center ${
           isOpen && "border-b bg-background/50 backdrop-blur-lg"
         }  flex-col px-4 py-1  overflow-hidden z-20`} // Prevent content overflow
       >
         <div className="flex items-center mt-0 max-w-3xl md:mt-[8px] w-full justify-between">
           <div className="flex items-center gap-4">
-            <a href="/" className="font-bold p-1 rounded-md">
+            <Link href="/" className="font-bold p-1 rounded-md">
               c-g.dev
-            </a>
+            </Link>
           </div>{" "}
           <div className=" hidden md:flex  items-center gap-6">
             <ModeToggle />
