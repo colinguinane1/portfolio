@@ -27,7 +27,7 @@ export default function BlogCard({ post }: BlogCardProps) {
               width={800}
               height={450}
               alt="Blog Post Image"
-              className="w-full rounded-lg pb-4 h-52 object-cover transition-all group-hover:scale-[1.01]"
+              className="w-full rounded-lg object-cover transition-all group-hover:scale-[1.01]"
               style={{
                 objectFit: "cover",
                 aspectRatio: "16/9",
