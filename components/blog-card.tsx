@@ -1,6 +1,5 @@
 import FadeInSection from "./FadeInView";
 import { CardDescription } from "./bento-grid";
-import { Badge } from "./ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Post } from "@/lib/get-posts";
 import { Link } from "next-view-transitions";
