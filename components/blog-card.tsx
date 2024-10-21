@@ -20,8 +20,8 @@ export default function BlogCard({ post }: BlogCardProps) {
         className="flex flex-col"
         href={`/posts/${post.slug}`}
       >
-        <Card>
-          <CardHeader>
+        <Card className="bg-transparent border-none shadow-none flex">
+          <CardHeader className="w-1/2">
             <Image
               src={post.metadata.image ? post.metadata.image : "/gradient.jpg"}
               width={800}
@@ -30,18 +30,19 @@ export default function BlogCard({ post }: BlogCardProps) {
               className="w-full rounded-lg pb-4 h-52 object-cover transition-all group-hover:scale-[1.01]"
               style={{
                 objectFit: "cover",
+                aspectRatio: "16/9",
               }}
             />
-            <div className="text-2xl font-bold hover:underline">
-              {post.metadata.title}
-            </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-6 w-1/2">
             <CardDescription>
+              <div className="text-lg font-bold hover:underline">
+                {post.metadata.title}
+              </div>
               <div className="flex items-center  pb-4 justify-between">
                 {post.metadata.publishDate}
               </div>
-              <div className=" pb-4">{post.metadata.description}</div>
+
               <Badge
                 variant="outline"
                 className="border-gray-500 mb-4 text-gray-500 dark:border-gray-400 dark:text-gray-400"

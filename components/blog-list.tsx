@@ -14,7 +14,7 @@ export default function BlogList({ posts }: { posts: Post[] }) {
             See More <ChevronRight size={15} />
           </Link>
         </div>
-        <div className="grid gap-6">
+        <div className="grid gap-2">
           {posts.map((post) => (
             <BlogCard post={post} key={post.slug} />
           ))}
