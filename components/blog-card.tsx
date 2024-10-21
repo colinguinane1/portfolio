@@ -1,6 +1,4 @@
 import FadeInSection from "./FadeInView";
-import { CardDescription } from "./bento-grid";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Post } from "@/lib/get-posts";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
@@ -13,8 +11,8 @@ export default function BlogCard({ post }: BlogCardProps) {
   return (
     <FadeInSection>
       <Link key={post.slug} href={`/posts/${post.slug}`}>
-        <Card className="bg-transparent p-0 border-none shadow-none justify-between w-full flex items-center flex-row-reverse">
-          <CardHeader className="w-1/2">
+        <div className="bg-transparent p-0 border-none shadow-none justify-between w-full flex items-center flex-row-reverse">
+          <div className="w-1/2">
             <Image
               src={post.metadata.image ? post.metadata.image : "/gradient.jpg"}
               width={800}
@@ -26,18 +24,18 @@ export default function BlogCard({ post }: BlogCardProps) {
                 aspectRatio: "2/2",
               }}
             />
-          </CardHeader>
-          <CardContent className="py-4 w-1/2">
-            <CardDescription>
+          </div>
+          <div className="py-4 w-1/2">
+            <div>
               <div className="flex items-center justify-between">
                 {post.metadata.publishDate}
               </div>{" "}
               <div className="text-lg font-bold hover:underline">
                 {post.metadata.title}
               </div>
-            </CardDescription>{" "}
-          </CardContent>
-        </Card>
+            </div>{" "}
+          </div>
+        </div>
       </Link>
     </FadeInSection>
   );
