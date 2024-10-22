@@ -33,6 +33,10 @@ export default function ResponsiveDialog() {
       <p>This is a responsive component that renders a Drawer or a Dialog</p>
     );
   };
+  const Content = () => {
+    return <p>This is the drawer content</p>;
+  };
+
   if (isDesktop) {
     return (
       <Dialog>
@@ -41,13 +45,16 @@ export default function ResponsiveDialog() {
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>
+            <DialogTitle className="text-left">
               <Title />
-            </DialogTitle>
+            </DialogTitle>{" "}
+            <DialogDescription className="text-left">
+              <Description />
+            </DialogDescription>
           </DialogHeader>
-          <DialogDescription>
-            <Description />
-          </DialogDescription>
+          <div>
+            <Content />
+          </div>
         </DialogContent>
       </Dialog>
     );
@@ -59,13 +66,16 @@ export default function ResponsiveDialog() {
         </DrawerTrigger>
         <DrawerContent>
           <DrawerHeader>
-            <DrawerTitle>
+            <DrawerTitle className="text-left">
               <Title />
             </DrawerTitle>
-            <DrawerDescription>
+            <DrawerDescription className="text-left">
               <Description />
             </DrawerDescription>
           </DrawerHeader>
+          <div className="p-4">
+            <Content />
+          </div>
         </DrawerContent>
       </Drawer>
     );
