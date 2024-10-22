@@ -30,7 +30,7 @@ export default function BlogCard({ post }: BlogCardProps) {
               <div className="flex items-center text-foreground justify-between">
                 {post.metadata.publishDate}
               </div>{" "}
-              <div className="text-lg font-bold text-primary hover:underline">
+              <div className="text-lg text-primary font-bold hover:underline">
                 {post.metadata.title}
               </div>
             </div>{" "}

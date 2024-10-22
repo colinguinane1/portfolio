@@ -104,7 +104,9 @@ export default function Projects() {
                               objectFit: "cover",
                             }}
                           />
-                          <CardTitle>{project.title}</CardTitle>
+                          <CardTitle className="text-primary tracking-tight">
+                            {project.title}
+                          </CardTitle>
                         </CardHeader>
                         <CardContent>
                           <CardDescription className="text-gray-600 dark:text-gray-300">

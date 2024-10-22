@@ -1,16 +1,14 @@
 import nextMDX from "@next/mdx";
-import rehypePrettyCode from "rehype-pretty-code";
-import { transformerCopyButton } from '@rehype-pretty/transformers'
+import rehypePrettyCode from "rehype-pretty-code"
  
 /** @type {import('rehype-pretty-code').Options} */
 const options = {
-  theme: "aurora-x",
-  transformers: [
-    transformerCopyButton({
-        visibility: 'always',
-        feedbackDuration: 3_000,
-    })
-  ]
+  theme: {
+    dark: "github-dark-dimmed",
+    light: "material-theme-lighter",
+  },
+  keepBackground: false,
+  
 };
  
 const withMDX = nextMDX({

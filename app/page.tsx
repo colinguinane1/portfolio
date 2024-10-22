@@ -2,7 +2,6 @@ import BentoGrid from "@/components/bento-grid";
 import BlogList from "@/components/blog-list";
 import ComponentList from "@/components/component-list";
 import Contact from "@/components/contact";
-import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
@@ -24,7 +23,6 @@ export default async function EnhancedPortfolioComponent() {
         <ComponentList components={components} />
         <Contact />
       </main>
-      <Footer />
     </div>
   );
 }

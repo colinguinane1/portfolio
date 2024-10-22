@@ -20,7 +20,7 @@ code[data-line-numbers]>[data-line]::before {
   /* Other styling */
   display: inline-block;
   width: 0.75rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   text-align: right;
   color: gray;
 }
@@ -37,10 +37,29 @@ code[data-line-numbers-max-digits="4"]>[data-line]::before {
   width: 2.25rem;
 }
 
+code[data-theme*=" "],
+code[data-theme*=" "] span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+
+  code[data-theme*=" "],
+  code[data-theme*=" "] span {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
+  }
+}
+
 pre {
   overflow-x: auto;
+  background: --var(card);
+  color: --var(card-foreground);
+  background-color: var(--card);
   font-size: small;
   border-radius: 0.5rem;
+ 
   padding: 1rem 0;
   margin-bottom: 2rem;
 }
@@ -65,11 +84,11 @@ body {
   :root {
     --background: 0 0% 95%;
     --foreground: 0 0% 40.9%;
-    --card: 0 0% 96%;
+    --card: 0 0% 98%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
+    --primary: 0 0% 0%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;

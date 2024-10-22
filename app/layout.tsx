@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../components/Header";
+import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ViewTransitions } from "next-view-transitions";
 import { DM_Sans } from "next/font/google";
@@ -33,7 +34,8 @@ export default function RootLayout({
         <body className="max-w-2xl min-w-screen min-w-96 min-h-screen">
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Header />
-            <div className="min-w-screen md:mt-10">{children}</div>
+            <div className="w-screen min-h-screen md:mt-10">{children}</div>
+            <Footer />
           </ThemeProvider>
         </body>
       </html>
