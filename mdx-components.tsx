@@ -1,7 +1,9 @@
+import ResponsiveDialog from "./components/drawer-dialog";
 import type { MDXComponents } from "mdx/types";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
+    ResponsiveDialog: ResponsiveDialog,
     ...components,
 
     h1: (props) => <h1 className="text-4xl font-black pb-4" {...props} />,

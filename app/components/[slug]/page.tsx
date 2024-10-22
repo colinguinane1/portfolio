@@ -1,4 +1,5 @@
 import UIClientMDXContent from "../UI-MDXClient";
+import ResponsiveDialog from "@/components/drawer-dialog";
 import { Badge } from "@/components/ui/badge";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -81,6 +82,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </div>
           </div>
           <UIClientMDXContent slug={slug} />
+          <ResponsiveDialog></ResponsiveDialog>
         </article>
       </div>
     </div>
