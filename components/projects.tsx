@@ -29,12 +29,14 @@ import {
 import { useMediaQuery } from "@/lib/media-query";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 
 export default function Projects() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const projects = [
     {
       title: "Blog Platform",
+      image: "/devnotes.png",
       description: "A full stack blog platform intended for developers.",
       technologies: ["Vercel", "Next.JS", "Supabase", "PostgreSQL", "Prisma"],
       longDescription:
@@ -48,6 +50,7 @@ export default function Projects() {
     },
     {
       title: "Fast Food Ordering App",
+      image: "/fastfood.png",
       description: "An app that allows users to order food from a restaurants.",
       technologies: ["Next.JS", "Firebase", "Firestore", "PostgreSQL"],
       longDescription:
@@ -60,6 +63,7 @@ export default function Projects() {
     },
     {
       title: "Music Portfolio",
+      image: "/music-app.png",
       description: "A portfolio website for the music i compose as a hobby.",
       technologies: ["NextJS", "Google Cloud"],
       longDescription:
@@ -90,7 +94,19 @@ export default function Projects() {
                     <DialogTrigger asChild>
                       <Card className="bg-card border cursor-pointer hover:shadow-lg transition-shadow duration-300">
                         <CardHeader>
-                          <CardTitle>{project.title}</CardTitle>
+                          <Image
+                            src={project.image}
+                            width={800}
+                            height={450}
+                            alt="Blog Post Image"
+                            className="w-full rounded-lg pb-4 h-52 object-cover transition-all group-hover:scale-[1.01]"
+                            style={{
+                              objectFit: "cover",
+                            }}
+                          />
+                          <CardTitle className="text-primary tracking-tight">
+                            {project.title}
+                          </CardTitle>
                         </CardHeader>
                         <CardContent>
                           <CardDescription className="text-gray-600 dark:text-gray-300">
@@ -122,6 +138,16 @@ export default function Projects() {
                         <DialogDescription className="text-gray-600 dark:text-gray-300">
                           {project.description}
                         </DialogDescription>
+                        <Image
+                          src={project.image}
+                          width={800}
+                          height={450}
+                          alt="Blog Post Image"
+                          className="w-full rounded-lg h-52 object-cover transition-all group-hover:scale-[1.01]"
+                          style={{
+                            objectFit: "cover",
+                          }}
+                        />
                       </DialogHeader>
                       <div className="mt-4">
                         <h4 className="font-semibold mb-2  text-primary">
@@ -161,6 +187,16 @@ export default function Projects() {
                       {" "}
                       <Card className="bg-card border cursor-pointer hover:shadow-lg transition-shadow duration-300">
                         <CardHeader>
+                          <Image
+                            src={project.image}
+                            width={800}
+                            height={450}
+                            alt="Blog Post Image"
+                            className="w-full rounded-lg pb-4 h-52 object-cover transition-all group-hover:scale-[1.01]"
+                            style={{
+                              objectFit: "cover",
+                            }}
+                          />
                           <CardTitle>{project.title}</CardTitle>
                         </CardHeader>
                         <CardContent>
@@ -195,6 +231,16 @@ export default function Projects() {
                         <DrawerDescription>
                           {project.description}
                         </DrawerDescription>
+                        <Image
+                          src={project.image}
+                          width={800}
+                          height={450}
+                          alt="Blog Post Image"
+                          className="w-full rounded-lg h-52 object-cover transition-all group-hover:scale-[1.01]"
+                          style={{
+                            objectFit: "cover",
+                          }}
+                        />
                       </DrawerHeader>
                       <div className="p-4">
                         <h4 className="font-semibold mb-2  text-primary">

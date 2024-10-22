@@ -1,4 +1,4 @@
-import ClientMDXContent from "../MDXClient";
+import UIClientMDXContent from "../UI-MDXClient";
 import { Badge } from "@/components/ui/badge";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -20,12 +20,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 async function getPost({ slug }: { slug: string }) {
   try {
-    const mdxPath = path.join("content", "blogs", `${slug}.mdx`);
+    const mdxPath = path.join("content", "ui", `${slug}.mdx`);
     if (!fs.existsSync(mdxPath)) {
       throw new Error(`MDX file for slug ${slug} does not exist`);
     }
 
-    const { metadata } = await import(`@/content/blogs/${slug}.mdx`);
+    const { metadata } = await import(`@/content/ui/${slug}.mdx`);
 
     return {
       slug,
@@ -38,7 +38,7 @@ async function getPost({ slug }: { slug: string }) {
 }
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join("content", "blogs"));
+  const files = fs.readdirSync(path.join("content", "ui"));
   const params = files.map((filename) => ({
     slug: filename.replace(".mdx", ""),
   }));
@@ -80,7 +80,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <Badge> {post.metadata.category}</Badge>
             </div>
           </div>
-          <ClientMDXContent slug={slug} />
+          <UIClientMDXContent slug={slug} />
         </article>
       </div>
     </div>

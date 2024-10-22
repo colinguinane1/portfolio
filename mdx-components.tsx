@@ -23,5 +23,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       />
     ),
     a: (props) => <a className="hover:underline font-semibold" {...props} />,
+    pre: (props) => <pre className="border bg-card" {...props} />,
   };
 }

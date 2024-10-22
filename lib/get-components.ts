@@ -1,8 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-
-export type Post = {
+export type Component = {
   slug: string;
   metadata: {
     title: string;
@@ -14,16 +13,16 @@ export type Post = {
 };
 
 // Helper function to get all posts
-export async function getAllPosts(): Promise<Post[]> {
-  const dir = path.join(process.cwd(), "content", "blogs");
+export async function getAllComponents(): Promise<Component[]> {
+  const dir = path.join(process.cwd(), "content", "ui");
   const files = fs.readdirSync(dir);
 
-  const posts = files
+  const uiBlog = files
     .filter((filename) => filename.endsWith(".mdx"))
     .map((filename) => {
       // Import the metadata from the MDX files
       // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const { metadata } = require(`@/content/blogs/${filename}`);
+      const { metadata } = require(`@/content/ui/${filename}`);
       return {
         slug: filename.replace(".mdx", ""),
         metadata: metadata || { title: "Untitled", publishDate: "1970-01-01" },
@@ -31,7 +30,7 @@ export async function getAllPosts(): Promise<Post[]> {
     });
 
   // Sort posts by publish date in descending order
-  return posts.sort(
+  return uiBlog.sort(
     (a, b) =>
       new Date(b.metadata.publishDate).getTime() -
       new Date(a.metadata.publishDate).getTime()
