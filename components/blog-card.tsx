@@ -25,12 +25,12 @@ export default function BlogCard({ post }: BlogCardProps) {
               }}
             />
           </div>
-          <div className="py-4 w-full">
+          <div className="w-full">
             <div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center text-foreground justify-between">
                 {post.metadata.publishDate}
               </div>{" "}
-              <div className="text-lg font-bold hover:underline">
+              <div className="text-lg font-bold text-primary hover:underline">
                 {post.metadata.title}
               </div>
             </div>{" "}
