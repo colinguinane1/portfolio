@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Analytics } from "@vercel/analytics/react";
 import { ViewTransitions } from "next-view-transitions";
 import { DM_Sans } from "next/font/google";
 
@@ -39,6 +40,7 @@ export default function RootLayout({
           </ThemeProvider>
         </body>
       </html>
+      <Analytics />
     </ViewTransitions>
   );
 }
