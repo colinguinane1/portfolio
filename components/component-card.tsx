@@ -1,7 +1,5 @@
 import FadeInSection from "./FadeInView";
-import { CardDescription } from "./bento-grid";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Component } from "@/lib/get-components";
 import { ChevronRight } from "lucide-react";
 import { Link } from "next-view-transitions";
@@ -18,21 +16,22 @@ export default function ComponentCard({ component }: ComponentCardProps) {
         className="flex flex-col"
         href={`/components/${component.slug}`}
       >
-        <Card>
-          <CardHeader>
-            <div className="text-2xl font-bold hover:underline">
+        <div className="flex justify-between items-center w-full">
+          <div>
+            <div className="text-lg text-primary font-bold hover:underline">
               {component.metadata.title}
             </div>
-          </CardHeader>
-          <CardContent>
-            <CardDescription>
-              <div className=" pb-4">{component.metadata.description}</div>
-            </CardDescription>{" "}
+            <div className="text-base pb-4">
+              {component.metadata.description}
+            </div>
+          </div>
+
+          <div>
             <Button variant={"outline"}>
               View <ChevronRight className="ml-1" size={15} />
             </Button>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </Link>
     </FadeInSection>
   );
