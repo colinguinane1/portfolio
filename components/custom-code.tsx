@@ -1,6 +1,6 @@
 "use client";
 
-import { Clipboard } from "lucide-react";
+import { Check, Clipboard } from "lucide-react";
 import React, { useRef, useState } from "react";
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
@@ -24,21 +24,24 @@ const Code = (props: any) => {
   };
 
   return (
-    <div className=" gap-0 rounded-lg bg-card showLineNumbers border overflow-x-auto p-4 text-white pb-6">
-      <div className="flex justify-between items-center ">
-        <div></div>
+    <div className=" gap-0 relative rounded-lg bg-card showLineNumbers border overflow-x-auto py-2 text-white pb-6">
+      <div className="flex absolute right-0 top-0  justify-between items-center ">
         <button
           type="button"
-          className="text-gray-300 hover:text-white"
+          className="text-gray-300 bg-transparent backdrop-blur-md p-4 hover:text-input"
           onClick={handleCopy}
         >
-          {copied ? "Copied!" : <Clipboard size={20} />}
+          {copied ? <Check color="green" /> : <Clipboard size={20} />}
         </button>
       </div>
-
-      <code ref={codeRef} className={`${className} bg-card text-sm`}>
-        {props.children}
-      </code>
+      <pre>
+        <code
+          ref={codeRef}
+          className={`${className} bg-card overflow-x-auto text-sm`}
+        >
+          {props.children}
+        </code>
+      </pre>
     </div>
   );
 };
