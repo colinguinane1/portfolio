@@ -1,11 +1,13 @@
-import ResponsiveDialog from "./components/drawer-dialog";
+import ResponsiveModal from "./components/modal-example";
+import Viewport from "./components/viewport";
+import { ExternalLink } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    ResponsiveDialog: ResponsiveDialog,
+    ResponsiveModal: (props) => <ResponsiveModal {...props} />,
     ...components,
-
+    Viewport: (props) => <Viewport {...props} />,
     h1: (props) => <h1 className="text-4xl font-black pb-4" {...props} />,
     h2: (props) => <h2 className="text-3xl font-bold pb-4" {...props} />,
     h3: (props) => <h3 className="text-2xl font-semibold pb-4 " {...props} />,
@@ -24,7 +26,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    a: (props) => <a className="hover:underline font-semibold" {...props} />,
+    a: (props) => (
+      <span className="flex items-center gap-1 text-blue-500 ">
+        <a className="underline  font-semibold" {...props} />
+        <ExternalLink size={15} />
+      </span>
+    ),
     pre: (props) => <pre className="border bg-card" {...props} />,
   };
 }
