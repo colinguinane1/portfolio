@@ -24,7 +24,7 @@ const Code = (props: any) => {
   };
 
   return (
-    <div className=" gap-0 relative rounded-lg bg-card showLineNumbers border overflow-x-auto py-2 text-white pb-6">
+    <div className=" gap-0 relative rounded-lg bg-card showLineNumbers border overflow-x-auto py-1 text-white">
       <div className="flex absolute right-0 top-0  justify-between items-center ">
         <button
           type="button"
