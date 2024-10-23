@@ -80,6 +80,17 @@ body {
   }
 }
 
+.code-block pre {
+  max-width: 100%;
+  overflow-x: auto;
+  word-break: break-word;
+}
+
+.code-block code {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 @layer base {
   :root {
     --background: 0 0% 95%;

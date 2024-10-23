@@ -1,3 +1,4 @@
+import Code from "./components/custom-code";
 import ResponsiveModal from "./components/modal-example";
 import Viewport from "./components/viewport";
 import { ExternalLink } from "lucide-react";
@@ -26,12 +27,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
+    pre: (props) => <Code {...props} />,
     a: (props) => (
-      <span className="flex items-center gap-1 text-blue-500 ">
-        <a className="underline  font-semibold" {...props} />
-        <ExternalLink size={15} />
+      <span className="inline-flex items-center gap-1 text-blue-500">
+        <a target="__blank" className="font-semibold" {...props} />
+        <ExternalLink size={12} />
       </span>
     ),
-    pre: (props) => <pre className="border bg-card" {...props} />,
   };
 }
