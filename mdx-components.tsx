@@ -1,6 +1,7 @@
-import Code from "./components/custom-code";
+import CustomAlert from "./components/mdx/alert";
+import Code from "./components/mdx/custom-code";
+import Viewport from "./components/mdx/viewport";
 import ResponsiveModal from "./components/modal-example";
-import Viewport from "./components/viewport";
 import { ExternalLink } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
 
@@ -8,6 +9,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ResponsiveModal: (props) => <ResponsiveModal {...props} />,
     ...components,
+    Alert: CustomAlert,
     Viewport: (props) => <Viewport {...props} />,
     h1: (props) => <h1 className="text-4xl font-black pb-4" {...props} />,
     h2: (props) => <h2 className="text-3xl font-bold pb-4" {...props} />,
@@ -30,7 +32,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     pre: (props) => <Code {...props} />,
     a: (props) => (
       <span className="inline-flex items-center gap-1 text-blue-500">
-        <a target="__blank" className="font-semibold" {...props} />
+        <a target="__blank" className="" {...props} />
         <ExternalLink size={12} />
       </span>
     ),

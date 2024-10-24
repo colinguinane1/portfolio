@@ -9,14 +9,20 @@ export const metadata = {
 
 <Viewport><ResponsiveModal/></Viewport>
 
-This component combines **[ShadCN](https://ui.shadcn.com)'s** `Dialog` and `Drawer` component to create a responsive modal that renders a `Dialog` on desktop and a `Drawer` on mobile.
+<Alert>This is a **client** component</Alert>
+
+This component combines [ShadCN](https://ui.shadcn.com)'s **Dialog** and **Drawer** component to create a responsive modal that renders a **Dialog** on desktop and a **Drawer** on mobile.
 
 ---
 
 Install dependencies:
 
 ```bash
-npm install @headlessui/react
+npx shadcn@latest init
+```
+
+```bash
+npx shadcn@latest add drawer dialog
 ```
 
 ---
@@ -123,5 +129,46 @@ export const ModalClose = ({ children }: { children: React.ReactNode }) => {
     return <DrawerClose className="pb-4">{children}</DrawerClose>;
   }
 };
+```
+
+Once you have created this component you can use it in your application like so:
+
+```tsx
+import {
+  ModalRoot,
+  ModalContent,
+  ModalTrigger,
+  ModalDescription,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+  ModalClose,
+} from "./drawer-dialog";
+import { Button } from "./ui/button";
+
+export default function ResponsiveModal() {
+  return (
+    <ModalRoot>
+      <ModalTrigger>
+        <Button variant={"outline"} className="w-fit">
+          Open
+        </Button>
+      </ModalTrigger>
+      <ModalContent>
+        <ModalHeader>
+          <ModalTitle>Modal Title</ModalTitle>
+          <ModalDescription>Modal Description</ModalDescription>
+        </ModalHeader>
+        <ModalFooter>
+          <ModalClose>
+            <Button className="w-full" variant={"outline"}>
+              Close
+            </Button>
+          </ModalClose>
+        </ModalFooter>
+      </ModalContent>
+    </ModalRoot>
+  );
+}
 ```
 
