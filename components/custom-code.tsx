@@ -25,13 +25,13 @@ const Code = (props: any) => {
 
   return (
     <div className=" gap-0 relative rounded-lg bg-card showLineNumbers border overflow-x-auto py-1 text-white">
-      <div className="flex absolute right-0 top-0  justify-between items-center ">
+      <div className="flex absolute right-2 top-2  justify-between items-center ">
         <button
           type="button"
-          className="text-gray-300 bg-transparent backdrop-blur-md p-4 hover:text-input"
+          className="text-gray-300 bg-transparent border rounded-md backdrop-blur-md p-2 hover:text-input"
           onClick={handleCopy}
         >
-          {copied ? <Check color="green" /> : <Clipboard size={20} />}
+          {copied ? <Check color="green" size={15} /> : <Clipboard size={20} />}
         </button>
       </div>
       <pre>

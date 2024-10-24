@@ -9,7 +9,19 @@ export const metadata = {
 
 <Viewport><ResponsiveModal/></Viewport>
 
-This component combines **[ShadCNUI](https://ui.shadcn.com)'s** `Dialog` and `Drawer` component to create a responsive modal that renders a `Dialog` on desktop and a `Drawer` on mobile.
+This component combines **[ShadCN](https://ui.shadcn.com)'s** `Dialog` and `Drawer` component to create a responsive modal that renders a `Dialog` on desktop and a `Drawer` on mobile.
+
+---
+
+Install dependencies:
+
+```bash
+npm install @headlessui/react
+```
+
+---
+
+Create a file called `modal.tsx` in the `components/ui` directory and add the following code:
 
 ```tsx showLineNumbers
 // components/ui/modal.tsx
@@ -111,7 +123,5 @@ export const ModalClose = ({ children }: { children: React.ReactNode }) => {
     return <DrawerClose className="pb-4">{children}</DrawerClose>;
   }
 };
-
-
 ```
 
